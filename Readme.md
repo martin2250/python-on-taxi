@@ -42,9 +42,9 @@ make DESTDIR="/dst/" EXTRA_CFLAGS="$FLAGS" install
 cd /dst
 cp -rl root/rapsberry/depsBuild/python/* usr/ # yes, "rapsberry" is not a typo
 rm -r root
-ln -s usr/bin/python3 usr/bin/python
+ln -s python3 usr/bin/python
 
-echo "#!/bin/bash" > uninstall_python.sh
+echo '#!/bin/bash' > uninstall_python.sh
 echo "cd /" >> uninstall_python.sh
 echo -n "rm " >> uninstall_python.sh
 find usr -type f | tr '\n' ' ' >> uninstall_python.sh
