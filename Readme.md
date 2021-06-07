@@ -168,7 +168,7 @@ find usr -type d -exec echo '"{}" ' \; | sort -r | tr '\n' ' ' >> $UNINSTALLER #
 chmod +x $UNINSTALLER
 
 # create tar package
-tar cvzf python3.9-modules-musleabi.tar.gz $UNINSTALLER usr
+tar cvzf python3.9-modules-musleabi.tar.gz $UNINSTALLER usr lib
 ```
 
 Exit the docker container and copy the final file to your system / to TAXI:
