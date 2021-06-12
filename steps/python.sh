@@ -1,14 +1,12 @@
 #!/bin/bash
 
-FLAGS="-march=armv5te -mtune=arm926ej-s -mfloat-abi=soft"
-
 # compile and install python
 cd /
 wget https://www.python.org/ftp/python/3.9.5/Python-3.9.5.tar.xz
 tar xvf Python-3.9.5.tar.xz
 cd Python-3.9.5
 
-export FLAGS="-march=armv5te -mtune=arm926ej-s -mfloat-abi=soft -I/dst/usr/local/include -I/dst/usr/include -L/dst/usr/local/lib -L/dst/usr/lib -I/usr/local/arm-linux-musleabi/include -L/usr/local/arm-linux-musleabi/lib"
+export FLAGS="-march=armv5te -mtune=arm926ej-s -mfloat-abi=soft -I/dst/usr/local/include -I/dst/usr/include -L/dst/usr/local/lib -L/dst/usr/lib -I/usr/local/arm-linux-musleabi/include -L/usr/local/arm-linux-musleabi/lib -fno-semantic-interposition"
 
 cat <<EOF > Modules/Setup.local
 *shared*
