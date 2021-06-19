@@ -11,16 +11,15 @@ export FLAGS="-march=armv5te -mtune=arm926ej-s -mfloat-abi=soft -I/dst/usr/local
 cat <<EOF > Modules/Setup.local
 *shared*
 zlib zlibmodule.c -lz
+pyexpat expat/xmlparse.c expat/xmlrole.c expat/xmltok.c pyexpat.c -I$(srcdir)/Modules/expat -DHAVE_EXPAT_CONFIG_H -DXML_POOR_ENTROPY -DUSE_PYEXPAT_CAPI -lexpat
 
 *disabled*
 _sqlite3
 _tkinter
 _curses
-pyexpat
 _codecs_jp
 _codecs_kr
 _codecs_tw
-unicodedata
 EOF
 
 CFLAGS="$FLAGS" LDFLAGS="$FLAGS" CXXFLAGS="$FLAGS" CPPFLAGS="$FLAGS" PKG_CONFIG_PATH="/dst/usr/lib/pkgconfig/" \

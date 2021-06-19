@@ -3,17 +3,6 @@ How to compile python to run on TAXI.
 
 You can also use the precompiled binaries from the GitHub releases, just skip to `Installation`.
 
-
-## Toolchain Setup
-We're using a docker image to compile everything, this makes it much easier to set up the toolchain.
-
-Start the docker container:
-```bash
-docker run --name python-on-taxi-musleabi -it rustembedded/cross:armv5te-unknown-linux-musleabi /bin/bash
-# or to resume
-docker exec -it python-on-taxi-musleabi bash
-```
-
 ## Building Python
 ```bash
 docker build -t taxi-python .

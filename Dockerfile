@@ -18,6 +18,9 @@ RUN /steps/ncurses.sh
 COPY steps/readline.sh /steps/readline.sh
 RUN /steps/readline.sh
 
+COPY steps/expat.sh /steps/expat.sh
+RUN /steps/expat.sh
+
 COPY steps/python.sh /steps/python.sh
 RUN /steps/python.sh
 
